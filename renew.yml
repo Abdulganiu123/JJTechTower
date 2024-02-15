@@ -31,13 +31,12 @@
         Business_Unit: "{{ Business_Unit }}"
       user_data: |
         #!/bin/bash
-        sudo su
         yum update -y
         yum install httpd -y
-        systemctl enable http.service
+        systemctl enable httpd.service
         sudo cd /var/www/html
         echo '<h1>Ansible Tower Project Done and Verified<h1>' > /var/www/html/index.html
-        sudo systemctl enable httpd.service
+        sudo systemctl start httpd.service
 
 #  - debug:
 #      msg: ec2_instance
