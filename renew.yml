@@ -31,6 +31,7 @@
         Business_Unit: "{{ Business_Unit }}"
       user_data: |
         #!/bin/bash
+        sudo su
         yum update -y
         yum install httpd -y
         systemctl enable httpd.service
